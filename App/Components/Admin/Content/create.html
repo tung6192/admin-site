@@ -1,0 +1,43 @@
+
+<div ng-controller='contentController'>
+	<div class='col-md-9 box-create'>
+		<div class='content-creation'>
+			<p>Title</p>
+			<input type='text' value="10 Things You Need To Know NOW" class='col-md-12'>
+			<button class='add-media'><i class="fa fa-picture-o" aria-hidden="true"></i> Add Media</button>
+			<uib-tabset active='1' class='tabset'>
+			    <uib-tab index="0" heading="Text">
+			    	<div style="min-height: 350px; border:1px solid #e0e0e0; margin:0px"></div>
+			    </uib-tab>
+			    <uib-tab index="1" heading="Visual">
+
+			    	<table class='table table-bordered'>
+			    		<tr><td>
+							<trix-editor angular-trix ng-model="foo" class="trix-content"></trix-editor>	    			
+			    		</td></tr>
+			    		<tr><td>p</td></tr>
+			    		<tr><td>Word Count: 0</td></tr>
+			    	</table>
+			    </uib-tab>
+			</uib-tabset>
+		</div>
+	</div>
+
+
+
+	<div class='col-md-3'>
+
+		<div class='content-category'>
+			<p>Category</p>
+			<div class='input-group col-md-12'>
+				<input type='text' class='form-control' value='Diabetes'>
+				<span class='input-group-addon'><i class='glyphicon glyphicon-search'></i></span>
+			</div>
+			<p>Tags</p>
+			<textarea>Prevention, suggestion, kids</textarea>
+			<button class='btn-dark'>PREVIEW</button>
+			<button class='btn-light'>PUBLISH</button>
+			<a href='#'><p>Cancel</p></a>
+		</div>
+	</div>
+</div>

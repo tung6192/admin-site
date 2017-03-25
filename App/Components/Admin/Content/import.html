@@ -1,0 +1,48 @@
+<div class='popup-wrapper' ng-controller='contentController'>
+	<div class='popup-header'>
+		<span>IMPORT CONTENT FROM AN EXTERNAL SOURCE</span>
+		<i class="fa fa-times" ng-click='cancel()'></i>
+	</div>
+	<div class='popup-filter'>
+		<div class='col-md-1'>Source</div>
+		<div class='col-md-3'>
+			<div class="input-group">
+		    	<input type="text" class="form-control" placeholder="Search for...">
+		    	<span class="input-group-btn">
+		        	<button class="btn btn-default" type="button"><i class="fa fa-arrow-down"></i></button>
+		      	</span>
+	    	</div>
+		</div>
+		<div class='col-md-1'>Topic</div>
+		<div class='input-group col-md-5' style='float:left; padding-right: 35px;'>
+	     	<input type="text" class="form-control" placeholder="Search">
+	     	<span class='input-group-addon' style="border-radius: 0px 20px 20px 0px;background:white; border-left-color: white"><i class='glyphicon glyphicon-search'></i></span>
+		</div>
+		<div class='col-md-2' style='display:inline-block;'>
+			<button class='search'>SEARCH</button>
+		</div>
+	</div>
+
+	<table class='popup-posts'>
+		<tr ng-repeat='x in import'>
+			<td ng-repeat-start='y in x'>
+				<input type='checkbox' id='{{y.index}}'>
+				<label for='{{y.index}}'></label>
+			</td>
+			<td ng-repeat-end>
+				<ul>
+					<li>{{y.title}}</li>
+					<li>{{y.body}}</li>
+					<li>
+						<span>Edit</span><span>Delete Post</span>
+					</li>
+				</ul>
+			</td>
+	</table>
+
+	<div class='row'>
+		<button class='btn-light'>
+			<i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>IMPORT
+		</button>
+	</div>
+</div>

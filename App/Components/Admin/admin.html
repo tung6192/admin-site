@@ -1,0 +1,46 @@
+<header class='admin-header'>
+	<a href='index.html'><img src='Assets/image/HeathSmart.png'>
+
+	</a>
+	<div class='header-panel'>
+		<logo style='position:absolute; right:140px;top:10px;'></logo>
+		<div class='theme-focus logout'>Log Out</div>
+	</div>
+</header>
+<aside class='main-sidebar col-md-2'>
+	<div>
+		<uib-accordion close-others="true">
+			<div uib-accordion-group is-open="status.open" ng-repeat='x in menu' ng-class="{'btn-active':status.open, 'transparent':!status.open}" ng-click='checkForm.value=x.click'>
+			  	<uib-accordion-heading>
+					<i class='{{x.icon}}'></i>{{x.content}}
+			  	</uib-accordion-heading>
+			  	<ul ng-show='$index==2'>
+			  		<li>CONTENT LICENSES</li>
+			  		<li>DASHBOARDS</li>
+			  	</ul>
+			  	<ul ng-show='$index==5'>
+			  		<li>GROUPS</li>
+			  	</ul>
+			</div>
+		</uib-accordion>
+	</div>
+</aside>
+
+<div class='content-wrapper col-md-10'>
+	<div ng-switch='checkForm.value'>
+		<div ng-switch-when='content'>
+			<ng-include src="'app/components/admin/content/content.html'"></ng-include>
+		</div>		
+		<div ng-switch-when='create'>
+			<ng-include src="'app/components/admin/content/create.html'"></ng-include>
+		</div>
+		<div ng-switch-when='users'>
+			<ng-include src="'app/components/admin/users/users.html'"></ng-include>
+		</div>
+		<div ng-switch-default>
+			<ng-include src="'app/components/admin/content/content.html'"></ng-include>
+			<!--<p style='text-align: center; font-size:80px; padding-top: 20%'>Default form</p>-->
+		</div>
+	</div>
+	<!--<div ng-switch-when='users'></div>-->
+</div>

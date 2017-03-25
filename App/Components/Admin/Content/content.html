@@ -1,0 +1,56 @@
+<div class='content' ng-controller='contentController'>
+	<div class='row'>
+		<button class='btn-light' ng-click="checkForm.value='create'"><i class='glyphicon glyphicon-plus'></i> &nbsp;CREATE</button>
+		<button class='btn-light' ng-click="open('lg')"><i class='glyphicon glyphicon-circle-arrow-down'></i> &nbsp;IMPORT</button>
+	</div>
+	<div class='row'>
+		<div class='col-md-9'>
+			<div class='filter'>
+			    <div class="input-group col-md-3">
+			     	<input type="text" class="form-control" placeholder="Search">
+			     	<span class='input-group-addon' style="border-radius: 0px 20px 20px 0px;background:white; border-left-color: white"><i class='glyphicon glyphicon-search'></i></span>
+			    </div>
+			    <div class='sort'>
+			    	Sort By: 
+				    <span uib-dropdown on-toggle="toggled(open)">
+				      <a href id="simple-dropdown" uib-dropdown-toggle>
+				        CATEGORY<span class='caret'></span>
+				      </a>
+				      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+				        <li ng-repeat="x in categories">
+				          <a href>{{x}}</a>
+				        </li>
+				      </ul>
+				    </span>	    	
+			    </div>
+		    </div>
+
+			<table class='posts' ng-repeat='x in content'>
+				<thead>
+					<th colspan="2">{{x.category}}</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td ng-repeat='y in x.main'>
+							<ul>
+								<li>{{y.title}}</li>
+								<li>{{y.body}}</li>
+								<li>
+									<span>Edit</span><span>Delete Post</span>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class='col-md-3 category'>
+			<h4>CATEGORIES</h4>
+			<!--define categories in sidebarController-->
+			<ul ng-repeat='x in categories'>
+				<li ng-class="{'active':$index=='0'}"><a href='#'>{{x}}</a></li>			
+			</ul>
+		</div>
+	</div>
+</div>

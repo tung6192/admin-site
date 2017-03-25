@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<title>Home</title>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--Icon-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<!--Trix CSS-->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.css">
+	<!--Angular Trixi-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.js"></script>
+	<!--AngularJS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<!-- Angular Route -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+	<!-- Angular Animate -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+	<!-- Angular Boostrap-->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.min.js'></script>
+
+	<!--My custom CSS-->	
+	<link rel='stylesheet' type='text/css' href='Assets/CSS/Main.CSS'>
+
+</head>
+<body ng-app='myApp'>
+
+	<div class='container-fluid'>
+
+		<ng-view></ng-view>
+	</div>
+
+
+
+
+	<!-- Module-->
+	<script src='app/app.module.js'></script>
+
+	<!-- Controllers-->
+	<script src='app/components/admin/sidebarController.js'></script>
+	<script src='app/components/admin/users/usersController.js'></script>
+	<script src='app/components/admin/content/contentController.js'></script>
+
+	<!-- Directives -->
+	<script src='app/shared/logoDirective.js'></script>
+
+	<!--Wysi Angular-trix-->
+	<script src="Assets/js/angular-trix.min.js"></script>
+
+</body>
